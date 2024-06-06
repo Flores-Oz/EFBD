@@ -1,0 +1,12 @@
+C:\Users\Ozzca\OneDrive\Documentos\EFBD\WindowApplication\WindowApplication\bin\Debug\WindowApplication.exe.config
+C:\Users\Ozzca\OneDrive\Documentos\EFBD\WindowApplication\WindowApplication\bin\Debug\WindowApplication.exe
+C:\Users\Ozzca\OneDrive\Documentos\EFBD\WindowApplication\WindowApplication\bin\Debug\WindowApplication.pdb
+C:\Users\Ozzca\OneDrive\Documentos\EFBD\WindowApplication\WindowApplication\obj\Debug\WindowApplication.csproj.AssemblyReference.cache
+C:\Users\Ozzca\OneDrive\Documentos\EFBD\WindowApplication\WindowApplication\obj\Debug\WindowApplication.Inicio.resources
+C:\Users\Ozzca\OneDrive\Documentos\EFBD\WindowApplication\WindowApplication\obj\Debug\WindowApplication.Login.resources
+C:\Users\Ozzca\OneDrive\Documentos\EFBD\WindowApplication\WindowApplication\obj\Debug\WindowApplication.Properties.Resources.resources
+C:\Users\Ozzca\OneDrive\Documentos\EFBD\WindowApplication\WindowApplication\obj\Debug\WindowApplication.csproj.GenerateResource.cache
+C:\Users\Ozzca\OneDrive\Documentos\EFBD\WindowApplication\WindowApplication\obj\Debug\WindowApplication.csproj.CoreCompileInputs.cache
+C:\Users\Ozzca\OneDrive\Documentos\EFBD\WindowApplication\WindowApplication\obj\Debug\WindowApplication.exe
+C:\Users\Ozzca\OneDrive\Documentos\EFBD\WindowApplication\WindowApplication\obj\Debug\WindowApplication.pdb
+C:\Users\Ozzca\OneDrive\Documentos\EFBD\WindowApplication\WindowApplication\obj\Debug\WindowApplication.Ingreso.resources
