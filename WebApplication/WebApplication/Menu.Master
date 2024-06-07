@@ -54,7 +54,7 @@
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li><a class="dropdown-item">
-                                    <asp:LinkButton ID="LinkButtonLogOut" runat="server">Cerrar Sesion</asp:LinkButton>
+                                    <asp:LinkButton ID="LinkButtonLogOut" runat="server" OnClick="LinkButtonLogOut_Click">Cerrar Sesion</asp:LinkButton>
                                 </a></li>
                             </ul>
                         </div>

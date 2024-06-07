@@ -11,7 +11,13 @@ namespace WebApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            LabelName.Text = Session["Nombre: "].ToString();
+        }
 
+        protected void LinkButtonLogOut_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
         }
     }
 }

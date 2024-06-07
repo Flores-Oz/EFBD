@@ -86,17 +86,6 @@ namespace WebApplication
                     conect.Open();
                     instruccion.ExecuteNonQuery();
                 }
-                catch (SqlException ex)
-                {
-                    if (ex.Number == 50000) // El código de error personalizado de RAISERROR
-                    {
-                        Console.WriteLine("Error: " + ex.Message);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Error: " + ex.Message);
-                    }
-                }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error: " + ex.Message);
@@ -126,9 +115,8 @@ namespace WebApplication
                         conecto.Close();
                     }
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('Registro Guardado con Éxito');", true);
-
+                    Mostrar();
                 }
-                Mostrar();
             }
             else
             {
@@ -140,7 +128,22 @@ namespace WebApplication
 
         protected void DropDownListDepa_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                int codDepa = Convert.ToInt32(DropDownListDepa.SelectedValue);
+                string consulta2 = "SELECT id_municipio AS Codigo, nombre_municipio AS Municipio FROM municipio WHERE id_departamento = " + codDepa;
+                SqlDataAdapter adapter2 = new SqlDataAdapter(consulta2, Conexion.conexion);
+                DataTable muni = new DataTable();
+                adapter2.Fill(muni);
+                DropDownListMuni.DataSource = muni;
+                DropDownListMuni.DataValueField = "Codigo";
+                DropDownListMuni.DataTextField = "Municipio";
+                DropDownListMuni.DataBind();
+            }
+            catch (Exception ex)
+            {
 
+            }
         }
     }
 }
