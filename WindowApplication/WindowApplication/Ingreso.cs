@@ -229,5 +229,16 @@ namespace WindowApplication
                 comboBoxDepa.SelectedValue = Convert.ToInt32(fila[9]);
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int idb = Convert.ToInt32(textBox9.Text);
+            string consulta = "EXEC BusquedaID " + idb;
+            SqlDataAdapter adapter = new SqlDataAdapter(consulta, Conexion.conexion);
+            DataTable persona = new DataTable();
+            adapter.Fill(persona);
+            dataGridView1.DataSource = persona;
+            dataGridView1.Refresh();
+        }
     }
 }

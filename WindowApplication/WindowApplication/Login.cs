@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,16 +25,37 @@ namespace WindowApplication
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool loginSuccessful = true; // Suponiendo que el inicio de sesión es exitoso
+            string query = "SELECT COUNT(1) FROM usuario WHERE usuario=@usuario AND password=@password";
 
-            if (loginSuccessful)
+            using (SqlConnection connection = new SqlConnection(Conexion.conexion))
             {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Credenciales incorrectas, intente de nuevo.");
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@usuario", textBoxUser.Text);
+                command.Parameters.AddWithValue("@password", textBoxPass.Text);
+
+                try
+                {
+                    connection.Open();
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+
+                    if (count == 1)
+                    {
+                        // Usuario y contraseña correctos
+                        MessageBox.Show("Login exitoso!");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                        // Aquí puedes abrir el siguiente formulario o realizar otras acciones
+                    }
+                    else
+                    {
+                        // Usuario o contraseña incorrectos
+                        MessageBox.Show("Usuario o contraseña incorrectos.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error: " + ex.Message);
+                }
             }
         }
     }
